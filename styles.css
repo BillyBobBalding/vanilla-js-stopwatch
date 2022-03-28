@@ -8,9 +8,22 @@ body {
     justify-content: center;
 }
 
+button {
+    height: 60px;
+    width: 160px;
+    color: white;
+    background-color: transparent;
+    font-size: 20px;
+    border-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
 .flex-container {
     width: 700px;
     height: 300px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     background-color: orange;
@@ -20,9 +33,12 @@ body {
 .container1 {
     display: flex;
     justify-content: center;
+    font-size: 30px;
+    color: white;
 }
 
 .container2 {
+    margin: 20px 70px;
     display: flex;
     justify-content: space-around;
 }
