@@ -22,7 +22,7 @@ button {
 
 .flex-container {
     width: 700px;
-    height: 300px;
+    height: 350px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,9 @@ button {
 }
 
 .container2 {
-    margin: 20px 70px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-around;
 }
