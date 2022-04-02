@@ -18,6 +18,21 @@ button {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
+    
+    transition: background-color 0.75s linear;
+    -moz-transition: background-color 0.75s linear;
+    -webkit-transition: background-color 0.75s linear; 
+    -ms-transition: background-color 0.75s linear;
+
+    transition: color 0.75s linear;
+    -moz-transition: color 0.75s linear;
+    -webkit-transition: color 0.75s linear; 
+    -ms-transition: color 0.75s linear;
+}
+
+button:hover {
+    background-color: white;
+    color: orange;
 }
 
 .flex-container {
@@ -43,4 +58,8 @@ button {
     margin-bottom: 30px;
     display: flex;
     justify-content: space-around;
+}
+
+#start-button {
+
 }
