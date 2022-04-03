@@ -8,13 +8,14 @@ startButton.addEventListener('click', formatTimer);
 stopButton.addEventListener('click', elapsedTime);
 
 let start;
+let count = 0;
 
 function formatTimer() {
     start = Date.now();
     
+    setInterval(elapsedTime, 10)
     
-    //seconds.textContent = "1234";
-    seconds.textContent = start;
+    //seconds.textContent = start;
 }
 
 function elapsedTime() {
