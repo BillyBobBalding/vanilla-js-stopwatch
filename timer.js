@@ -23,10 +23,7 @@ function startTimer() {
 
 function elapsedTime() {
     if (isStopped){
-        elapsed = elapsed + 10;
-        seconds.textContent = Math.floor(elapsed / 1000);
-        fractional.textContent = ((elapsed / 1000) % 1).toFixed(2)
-        .toString().split('.')[1];
+        
         isStopped = false;
         stoppedTime = elapsed;
 
@@ -34,14 +31,13 @@ function elapsedTime() {
     }
     else{
         elapsed = Date.now() - start + stoppedTime;
-        seconds.textContent = Math.floor(elapsed / 1000);
-        fractional.textContent = ((elapsed / 1000) % 1).toFixed(2)
-        .toString().split('.')[1];
 
         console.log(elapsed);
     }
-    
-    
+
+    seconds.textContent = Math.floor(elapsed / 1000).toString().padStart(2, '0');
+    fractional.textContent = ((elapsed / 1000) % 1).toFixed(2)
+    .toString().split('.')[1];
 }
 
 function stopTimer() {
