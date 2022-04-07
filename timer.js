@@ -13,8 +13,12 @@ let count = 0;
 let elapsed;
 let stoppedTime = 0;
 let isStopped = false;
+let hasStarted = false;
 
 function startTimer() {
+    if (hasStarted)
+        return;
+    
     start = Date.now();
     interval = setInterval(elapsedTime, 10)
     
@@ -22,17 +26,18 @@ function startTimer() {
 }
 
 function elapsedTime() {
+    hasStarted = true;
+    
     if (isStopped){
-        
         isStopped = false;
         stoppedTime = elapsed;
 
-        console.log('**' + elapsed);
+        //console.log('**' + elapsed);
     }
     else{
         elapsed = Date.now() - start + stoppedTime;
 
-        console.log(elapsed);
+        //console.log(elapsed);
     }
 
     seconds.textContent = Math.floor(elapsed / 1000).toString().padStart(2, '0');
@@ -44,5 +49,7 @@ function stopTimer() {
     clearInterval(interval);
     interval = null;
     isStopped = true;
-    console.log('stopped: ' + elapsed);
+    hasStarted = false;
+    
+    //console.log('stopped: ' + elapsed);
 }
