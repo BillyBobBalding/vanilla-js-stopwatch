@@ -3,9 +3,12 @@ const fractional = document.getElementById('fractional');
 
 const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
+const resetButton = document.getElementById("reset-button");
 
 startButton.addEventListener('click', startTimer);
 stopButton.addEventListener('click', stopTimer);
+resetButton.addEventListener('click', resetTimer);
+
 
 let start;
 let interval;
@@ -37,7 +40,7 @@ function elapsedTime() {
     else{
         elapsed = Date.now() - start + stoppedTime;
 
-        //console.log(elapsed);
+        console.log(elapsed);
     }
 
     seconds.textContent = Math.floor(elapsed / 1000).toString().padStart(2, '0');
@@ -52,4 +55,14 @@ function stopTimer() {
     hasStarted = false;
     
     //console.log('stopped: ' + elapsed);
+}
+
+function resetTimer() {
+    clearInterval(interval);
+    interval = null;
+
+    seconds.textContent = '00';
+    fractional.textContent = '00';
+    stoppedTime = 0;
+    elapsed = 0;
 }
